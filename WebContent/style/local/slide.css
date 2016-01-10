@@ -1,0 +1,52 @@
+/* global */
+input{
+	width:260px;
+}
+
+
+/*
+ create 
+*/
+.file-box{ 
+	position:relative;
+	width:364px;
+	height:30px;
+	clear:both;
+} 
+input#fileUploadItemImage{
+	position:absolute; 
+	top:-8px; 
+	left:95px;
+	width:133px; 
+	height:28px; 
+	/*filter:alpha(opacity:0);*/
+	opacity: 0;
+}
+input#c_SlideName{
+	width:260px;
+}
+input#u_SlideName{
+	width:260px;
+}
+/* image create */
+.slide-create{
+	width:400px;
+	height:242px;
+}
+
+
+
+/* search and view */
+input#textSearch{
+	width:460px;
+}
+
+/* image thumbnail */
+.itemThumbnail-container{
+	margin:0px;
+	padding:0px;	
+}
+.item-thumbnail{
+	width:200px;
+	/*height:124px;*/
+}

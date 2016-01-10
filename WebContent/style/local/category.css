@@ -1,0 +1,48 @@
+#classCreator{
+	display:none;
+}
+div#classUpdator{
+	display:none;
+}
+
+input{
+	width:260px;
+}
+
+input#textSearch{
+	width:260px;
+}
+
+select#classId{
+	width:260px;
+}
+
+select#status{
+	width:260px;
+}
+
+select#c_classStatusId{
+	width:260px;
+}
+
+div#class_level1 ul{
+	margin: 0px;
+	padding: 0px;
+}
+
+div#class_filter ul{
+	margin: 0px;
+	padding: 0px;
+}
+
+#class_level1 li{
+	display: inline-block;
+	list-style: none;
+	padding: 3px;
+}
+
+#class_filter li{
+	display: inline-block;
+	list-style: none;
+	padding: 3px;
+}

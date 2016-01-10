@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<mvc:annotation-driven />
+	
+	<!-- Multi-language and i18n support -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>com/athensoft/ecomm/resources/acp</value>
+				<value>com/athensoft/ecomm/resources/errorcodes</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en_US"></property>
+	</bean>	
+	
+	<mvc:interceptors>
+		<mvc:interceptor>  
+           <mvc:mapping path="/*" />  
+           <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>  
+        </mvc:interceptor>     
+	</mvc:interceptors>
+	
+
+	<!-- Database properties file support -->
+	<context:property-placeholder
+		ignore-unresolvable="true" 
+		location="classpath:com/athensoft/ecomm/config/jdbc-mysql.properties"
+	/>	
+	
+	<!-- Database connection -->	 
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+	</bean>
+
+<!-- 	gmail conf
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com"></property>
+		<property name="port" value="587"></property>
+		<property name="username" value="xxx@gmail.com"></property>
+		<property name="password" value="yyy"></property>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+			</props>
+		</property>
+	</bean>
+ -->
+ 
+ <!-- athensoft email smtp conf  NON-SSL-->
+
+ <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<property name="host" value="mail.athensoft.com"></property>
+	<property name="port" value="8025"></property>
+	<property name="username" value="support@athensoft.com"></property>
+	<property name="password" value="092314"></property>
+	<property name="javaMailProperties">
+		<props>
+			<prop key="mail.smtp.auth">true</prop>
+			<prop key="mail.smtp.starttls.enable">true</prop>
+			<prop key="mail.smtp.ssl.trust">mail.athensoft.com</prop>
+		</props>
+	</property>
+</bean>
+
+
+ <!-- athensoft email smtp conf TSL/SSL-->
+ <!-- 
+ <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<property name="host" value="xjdz4.dailyrazor.com"></property>
+	<property name="port" value="465"></property>
+	<property name="username" value="athens"></property>
+	<property name="password" value="timon@927"></property>
+	<property name="javaMailProperties">
+		<props>
+			<prop key="mail.smtp.auth">true</prop>
+			<prop key="mail.smtp.starttls.enable">true</prop>
+			<prop key="mail.smtp.ssl.trust">xjdz4.dailyrazor.com</prop>
+		</props>
+	</property>
+</bean>
+ -->
+ 
+</beans>

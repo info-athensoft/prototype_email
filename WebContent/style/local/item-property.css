@@ -1,0 +1,36 @@
+/* global */
+
+
+/* search */
+/* search and view */
+input#textSearch{
+	width:460px;
+}
+
+/* create */
+
+select {
+	width:260px;
+}
+
+input#c_PropertyTemplate,
+input#c_PropertyName,
+input#c_PropertySeqNo{
+	width:260px;
+}
+
+/* update */
+input#u_PropertyTemplate,
+input#u_PropertyName,
+input#u_PropertySeqNo{
+	width:260px;
+}
+
+/* delete */
+input#d_PropertyTemplate,
+input#d_PropertyName,
+input#d_PropertySeqNo{
+	width:260px;
+}
+
+/*alert message*/

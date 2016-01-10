@@ -1,0 +1,28 @@
+/* global */
+
+
+/* search */
+/* search and view */
+input#textSearch{
+	width:460px;
+}
+
+/* create */
+
+
+/* update */
+
+select {
+	width:260px;
+}
+
+input#u_itemClassId,
+input#u_itemCode,
+input#u_itemName,
+input#u_previousPrice,
+input#u_currentPrice,
+input#u_saleStatus
+{
+	width:260px;
+}
+
