@@ -46,29 +46,49 @@
 		<property name="username" value="${jdbc.username}"></property>
 	</bean>
 
-<!-- 	gmail conf
+<!-- 	gmail conf  -->
+<!-- 
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com"></property>
 		<property name="port" value="587"></property>
-		<property name="username" value="xxx@gmail.com"></property>
-		<property name="password" value="yyy"></property>
+		<property name="username" value="lada314@gmail.com"></property>
+		<property name="password" value="ildmost@328"></property>
 		<property name="javaMailProperties">
 			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
 				<prop key="mail.smtp.auth">true</prop>
 				<prop key="mail.smtp.starttls.enable">true</prop>
 				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+				<prop key="mail.debug">true</prop>
 			</props>
 		</property>
 	</bean>
- -->
+  -->
  
  <!-- athensoft email smtp conf  NON-SSL-->
-
  <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 	<property name="host" value="mail.athensoft.com"></property>
 	<property name="port" value="8025"></property>
 	<property name="username" value="support@athensoft.com"></property>
-	<property name="password" value="092314"></property>
+	<property name="password" value="zq@314@qyt@328"></property>
+	<property name="javaMailProperties">
+		<props>
+			<prop key="mail.smtp.auth">true</prop>
+			<prop key="mail.smtp.starttls.enable">false</prop>
+			<prop key="mail.smtp.ssl.trust">mail.athensoft.com</prop>
+			<prop key="mail.debug">true</prop>
+		</props>
+	</property>
+</bean>
+
+
+ <!-- athensoft email smtp conf TSL/SSL-->
+<!-- 
+ <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<property name="host" value="mail.athensoft.com"></property>
+	<property name="port" value="465"></property>
+	<property name="username" value="support@athensoft.com"></property>
+	<property name="password" value="ildmost@328"></property>
 	<property name="javaMailProperties">
 		<props>
 			<prop key="mail.smtp.auth">true</prop>
@@ -77,23 +97,6 @@
 		</props>
 	</property>
 </bean>
-
-
- <!-- athensoft email smtp conf TSL/SSL-->
- <!-- 
- <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-	<property name="host" value="xjdz4.dailyrazor.com"></property>
-	<property name="port" value="465"></property>
-	<property name="username" value="athens"></property>
-	<property name="password" value="timon@927"></property>
-	<property name="javaMailProperties">
-		<props>
-			<prop key="mail.smtp.auth">true</prop>
-			<prop key="mail.smtp.starttls.enable">true</prop>
-			<prop key="mail.smtp.ssl.trust">xjdz4.dailyrazor.com</prop>
-		</props>
-	</property>
-</bean>
- -->
- 
+  -->
+  
 </beans>
