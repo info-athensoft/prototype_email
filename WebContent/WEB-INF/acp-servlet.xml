@@ -11,7 +11,7 @@
 	<mvc:annotation-driven></mvc:annotation-driven>
 	
 	<!-- Component auto-scan support -->
-	<context:component-scan base-package="com.athensoft.ecomm.controller"></context:component-scan>
+	<context:component-scan base-package="com.athensoft.common.controller"></context:component-scan>
 	
 
 	<!-- View Resolver -->
